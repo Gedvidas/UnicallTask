@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !\.(css|js)$
+
+
+DirectoryIndex index.php
+RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
+#RewriteRule ^[^.]+$ index.php [L]
